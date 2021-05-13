@@ -4,7 +4,7 @@ import Icon from './icon';
 
 export default function Archive({ title, href, ...props }) {
   return (
-    <Link to={href} title={title} className="small" {...props}>
+    <Link to={href} title={title} className="w-100 d-block" {...props}>
       <PdfIcon /> {title}
     </Link>
   );
@@ -13,7 +13,7 @@ export default function Archive({ title, href, ...props }) {
 const PdfIcon = ({ className }) => (
   <Icon
     iconName="PDF"
-    className={`fill-orange position-relative top-minus-2 ${className}`}
+    className={`fill-orange position-relative top-minus-1 ${className}`}
     width="16"
     height="auto"
   />
