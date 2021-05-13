@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import useSiteMetadata from '../hooks/use-sitemetadata';
 import {
+  Archive,
   CodeBlock,
   KatacodaPageLink,
   KatacodaPanel,
@@ -79,6 +80,7 @@ const Layout = ({
       KatacodaPageLink,
       Icon,
       StubCards,
+      Archive,
     }),
     [katacodaPanelData, meta.path, meta.isIndexPage],
   );
