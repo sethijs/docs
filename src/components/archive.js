@@ -2,9 +2,16 @@ import React from 'react';
 import { Link } from './';
 import Icon from './icon';
 
-export default function Archive({ title, href, ...props }) {
+export default function Archive({
+  title,
+  product,
+  version,
+  fileName,
+  ...props
+}) {
+  const url = `https://www.enterprisedb.com/edb-docs/static/docs/${product}/${version}/${fileName}`;
   return (
-    <Link to={href} title={title} className="w-100 d-block" {...props}>
+    <Link to={url} title={title} className="w-100 d-block" {...props}>
       <PdfIcon /> {title}
     </Link>
   );
