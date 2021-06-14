@@ -2,14 +2,14 @@ name: Deploy HARP branch to Netlify
 on:
   push:
     branches:
-      - content/josh/1450-harp-stub
+      - content/josh/1450-harp-stub-test
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: content/josh/1450-harp-stub
+        ref: content/josh/1450-harp-stub-test
         fetch-depth: 0 # fetch whole repo so git-restore-mtime can work
     - name: Update submodules
       run: git submodule update --init --remote
