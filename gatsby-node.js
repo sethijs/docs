@@ -1,5 +1,6 @@
 // this patch is required to consistently load all the doc files
 const realFs = require('fs');
+const path = require('path');
 const gracefulFs = require('graceful-fs');
 gracefulFs.gracefulify(realFs);
 
@@ -433,6 +434,11 @@ exports.onPreBootstrap = () => {
 };
 
 exports.onPostBuild = async ({ reporter, pathPrefix }) => {
+  realFs.copyFileSync(
+    path.join(__dirname, '/netlify.toml'),
+    path.join(__dirname, '/public/netlify.toml'),
+  );
+
   const originalRedirects = await readFile('public/_redirects');
 
   // filter out legacyRedirects that are loaded via nginx, not netlify
